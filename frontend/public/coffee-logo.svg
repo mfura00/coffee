@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4A2800"/>
+      <stop offset="100%" stop-color="#8B4513"/>
+    </linearGradient>
+    <linearGradient id="beanGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#D2691E"/>
+      <stop offset="100%" stop-color="#8B4513"/>
+    </linearGradient>
+    <linearGradient id="steamGrad" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#F5E6D3" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#F5E6D3" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F3A847"/>
+      <stop offset="100%" stop-color="#D2691E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer ring -->
+  <circle cx="200" cy="200" r="190" fill="url(#bgGrad)" stroke="#F3A847" stroke-width="4"/>
+  
+  <!-- Inner decorative ring -->
+  <circle cx="200" cy="200" r="175" fill="none" stroke="#F3A847" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+  <!-- Coffee bean (stylized, split) -->
+  <g transform="translate(200,210)">
+    <!-- Left half -->
+    <path d="M-6,-65 C-30,-55 -50,-30 -48,0 C-46,30 -30,55 -6,65 C-12,40 -14,0 -12,-30 C-10,-50 -8,-60 -6,-65Z" 
+          fill="url(#beanGrad)" opacity="0.95"/>
+    <!-- Right half -->
+    <path d="M6,-65 C30,-55 50,-30 48,0 C46,30 30,55 6,65 C12,40 14,0 12,-30 C10,-50 8,-60 6,-65Z" 
+          fill="url(#goldGrad)" opacity="0.95"/>
+    <!-- Center line -->
+    <path d="M0,-65 C-2,-30 -2,30 0,65" stroke="#4A2800" stroke-width="1.5" opacity="0.6"/>
+  </g>
+
+  <!-- Steam curls rising from bean -->
+  <g opacity="0.8">
+    <!-- Left steam curl -->
+    <path d="M165,160 C150,130 140,100 155,70 C165,50 180,45 185,60 C190,75 185,90 175,95" 
+          stroke="url(#steamGrad)" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M160,150 C140,120 135,90 148,60 C158,40 175,35 180,50" 
+          stroke="url(#steamGrad)" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/>
+    
+    <!-- Right steam curl -->
+    <path d="M235,160 C250,130 260,100 245,70 C235,50 220,45 215,60 C210,75 215,90 225,95" 
+          stroke="url(#steamGrad)" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M240,150 C260,120 265,90 252,60 C242,40 225,35 220,50" 
+          stroke="url(#steamGrad)" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/>
+    
+    <!-- Center steam wisp -->
+    <path d="M192,155 C195,125 190,95 200,65 C210,95 205,125 208,155" 
+          stroke="url(#steamGrad)" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.4"/>
+  </g>
+
+  <!-- Stars accent -->
+  <circle cx="200" cy="55" r="7" fill="#F3A847" opacity="0.6"/>
+  <circle cx="155" cy="45" r="4" fill="#F3A847" opacity="0.4"/>
+  <circle cx="245" cy="45" r="4" fill="#F3A847" opacity="0.4"/>
+
+  <!-- Ribbon banner at bottom -->
+  <path d="M100,300 C100,290 140,285 200,285 C260,285 300,290 300,300 C300,310 260,315 200,315 C140,315 100,310 100,300Z" 
+        fill="#4A2800" stroke="#F3A847" stroke-width="2"/>
+  
+  <!-- Text on ribbon -->
+  <text x="200" y="305" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="#F3A847" letter-spacing="6">BREW &amp; BEAN</text>
+
+  <!-- Small leaf accents -->
+  <path d="M120,195 C110,185 105,175 110,170 C115,165 125,170 130,180 C135,190 130,200 120,195Z" 
+        fill="#D2691E" opacity="0.4"/>
+  <path d="M280,195 C290,185 295,175 290,170 C285,165 275,170 270,180 C265,190 270,200 280,195Z" 
+        fill="#D2691E" opacity="0.4"/>
+</svg>
