@@ -32,16 +32,41 @@ const uploadsDir = path.join(__dirname, 'uploads');
 if (!fs.existsSync(uploadsDir)) fs.mkdirSync(uploadsDir, { recursive: true });
 app.use('/uploads', express.static(uploadsDir));
 
+// ── Cloudinary ──
+const cloudinary = require('cloudinary').v2;
+if (process.env.CLOUDINARY_CLOUD_NAME) {
+  cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
+  });
+  console.log('Cloudinary configured');
+}
+
 // ── Image upload endpoint ──
 const multer = require('multer');
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, uploadsDir),
-  filename: (req, file, cb) => cb(null, Date.now() + '-' + Math.round(Math.random() * 1E9) + path.extname(file.originalname)),
-});
-const upload = multer({ storage, limits: { fileSize: 5 * 1024 * 1024 } });
-app.post('/api/upload', upload.single('image'), (req, res) => {
+const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 5 * 1024 * 1024 } });
+app.post('/api/upload', upload.single('image'), async (req, res) => {
   if (!req.file) return res.status(400).json({ message: 'No file uploaded' });
-  res.json({ url: `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}` });
+  try {
+    if (process.env.CLOUDINARY_CLOUD_NAME) {
+      const b64 = Buffer.from(req.file.buffer).toString('base64');
+      const dataUri = 'data:' + req.file.mimetype + ';base64,' + b64;
+      const result = await cloudinary.uploader.upload(dataUri, {
+        folder: 'brew-bean',
+        resource_type: 'image',
+      });
+      return res.json({ url: result.secure_url, public_id: result.public_id });
+    }
+    // Fallback: save locally
+    const ext = path.extname(req.file.originalname);
+    const filename = Date.now() + '-' + Math.round(Math.random() * 1E9) + ext;
+    fs.writeFileSync(path.join(uploadsDir, filename), req.file.buffer);
+    res.json({ url: `${req.protocol}://${req.get('host')}/uploads/${filename}` });
+  } catch (err) {
+    console.error('Upload error:', err);
+    res.status(500).json({ message: 'Upload failed' });
+  }
 });
 
 // ── Subscribe / Discount ──
