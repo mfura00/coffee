@@ -11,7 +11,7 @@ const Login = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e) => {CDATASectioncd 
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     setLoading(true);
