@@ -285,11 +285,15 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
   min-height: 350px;
   display: flex;
   align-items: center;
-  transition: background-image 0.8s;
   margin-bottom: 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  animation: heroFadeIn 0.8s ease;
+}
+@keyframes heroFadeIn {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
 }
 .amz-hero::before {
   content: '';

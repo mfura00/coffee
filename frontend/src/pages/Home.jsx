@@ -6,9 +6,11 @@ import ProductCard from '../components/ProductCard';
 import { FiMail, FiX } from 'react-icons/fi';
 
 const HERO_BANNERS = [
-  { titleKey: 'Fresh Coffee Delivered', subtitleKey: 'From Kigali to your door', ctaKey: 'Shop Now', link: '/menu', img: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1400&h=500&fit=crop' },
-  { titleKey: 'Health Rated Drinks', subtitleKey: 'Every drink scored', ctaKey: 'View Ratings', link: '/health', img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1400&h=500&fit=crop' },
-  { titleKey: 'Shop by Category', subtitleKey: 'Limited batch from the highlands of Rwanda', ctaKey: 'Explore Menu', link: '/menu?category=brewed', img: 'https://images.unsplash.com/photo-1559526324-593bc073d938?w=1400&h=500&fit=crop' },
+  { titleKey: 'Fresh Coffee Delivered', subtitleKey: 'From Kigali to your door', ctaKey: 'Shop Now', link: '/menu', img: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1400&h=500&fit=crop' },
+  { titleKey: 'Health Rated Drinks', subtitleKey: 'Every drink scored for nutrition', ctaKey: 'View Ratings', link: '/health', img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1400&h=500&fit=crop' },
+  { titleKey: 'Premium Rwandan Coffee', subtitleKey: 'Taste the highlands in every cup', ctaKey: 'Explore Menu', link: '/menu?category=brewed', img: 'https://images.unsplash.com/photo-1559526324-593bc073d938?w=1400&h=500&fit=crop' },
+  { titleKey: 'Fresh Pastries Daily', subtitleKey: 'Baked fresh every morning', ctaKey: 'View Pastries', link: '/menu?category=pastry', img: 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=1400&h=500&fit=crop' },
+  { titleKey: 'Cold Brew Special', subtitleKey: 'Smooth, strong, and refreshing', ctaKey: 'Shop Cold Drinks', link: '/menu?category=cold', img: 'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=1400&h=500&fit=crop' },
 ];
 
 const Home = () => {
@@ -55,7 +57,7 @@ const Home = () => {
 
   return (
     <div className="amz-home">
-      <section className="amz-hero" style={{ backgroundImage: `url(${banner.img})` }}>
+      <section key={bannerIdx} className="amz-hero" style={{ backgroundImage: `url(${banner.img})` }}>
         <div className="amz-hero-content">
           <div className="amz-hero-text">
             <h1>{t(banner.titleKey)}</h1>
