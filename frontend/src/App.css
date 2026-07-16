@@ -1116,12 +1116,78 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
   .amz-list-view .amz-product-img-wrap { width: 100%; height: 180px; }
   .contact-grid { grid-template-columns: 1fr; }
   .amz-cart-panel { width: 100vw; }
+  .amz-header-row { gap: 8px; }
+  .amz-section { padding: 16px; margin: 12px 0; }
+  .amz-home-content { padding: 0 12px; }
+  .amz-product-row { gap: 10px; padding-bottom: 4px; }
+  .amz-footer-links { grid-template-columns: 1fr 1fr; gap: 20px; padding: 24px 16px; }
+  .amz-why-grid { grid-template-columns: 1fr; gap: 10px; }
+  .amz-why-card { padding: 16px; }
+  .amz-subscribe-card { padding: 20px 16px; }
+  .amz-subscribe-form { flex-direction: column; gap: 8px; }
+  .amz-subscribe-form button { width: 100%; }
+  .admin-table { font-size: 0.78rem; }
+  .admin-table th, .admin-table td { padding: 10px 12px; }
+  .admin-tabs { gap: 4px; }
+  .admin-tab { padding: 8px 14px; font-size: 0.78rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .stat-card { padding: 14px; }
+  .stat-card h3 { font-size: 1.3rem; }
+  .auth-card { padding: 24px; margin: 0 12px; }
+  .profile-card { padding: 24px; margin: 0 12px; }
+  .health-item-card { padding: 14px; }
+  .health-stats { grid-template-columns: repeat(3, 1fr); }
+  .amz-hero-text { max-width: 100%; }
+  .amz-hero-dots { padding-bottom: 10px; }
+  .amz-hero-dot { width: 8px; height: 8px; }
+  .amz-category-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .amz-cat-card { height: 120px; }
+  .order-guide-step { gap: 10px; padding: 12px 16px; }
+  .amz-product-body { padding: 10px 12px 14px; }
+  .amz-product-title { font-size: 0.88rem; }
+  .amz-btn-add { font-size: 0.8rem; padding: 7px 12px; }
+  .amz-thumb-row { gap: 4px; }
+  .amz-thumb { width: 32px; height: 32px; }
+  .amz-cart-item img { width: 52px; height: 52px; }
+  .amz-cart-header { padding: 12px 16px; }
+  .amz-cart-footer { padding: 12px 16px; }
 }
 @media (max-width: 480px) {
   .amz-logo-text { font-size: 0.9rem; }
   .amz-search input { font-size: 0.85rem; }
   .amz-product-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
   .amz-product-card { min-width: 0; }
+  .amz-product-img-wrap { height: 150px; }
+  .amz-header-row { height: 50px; }
+  .amz-hero { min-height: 220px; }
+  .amz-hero-text h1 { font-size: 1.4rem; }
+  .amz-hero-text p { font-size: 0.9rem; margin-bottom: 16px; }
+  .amz-btn-hero { padding: 10px 24px; font-size: 0.88rem; }
+  .amz-category-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .amz-cat-card { height: 100px; }
+  .amz-cat-card span { font-size: 0.82rem; padding: 8px 10px; }
+  .amz-footer-links { grid-template-columns: 1fr; gap: 16px; padding: 20px 16px; }
+  .amz-footer-links h4 { font-size: 0.9rem; }
+  .amz-footer-links a, .amz-footer-links p { font-size: 0.8rem; }
+  .amz-footer-bottom { padding: 14px; }
+  .stats-grid { grid-template-columns: 1fr; }
+  .amz-why-card { padding: 14px 10px; }
+  .amz-why-card h3 { font-size: 0.95rem; }
+  .amz-why-card p { font-size: 0.8rem; }
+  .amz-product-row { flex-wrap: nowrap; }
+  .amz-product-row .amz-product-card { min-width: 160px; max-width: 170px; }
+  .amz-sub-popup { padding: 24px; margin: 0 10px; }
+  .amz-sub-popup h3 { font-size: 1.3rem; }
+  .order-guide-btn { bottom: 12px; right: 12px; padding: 10px 14px; font-size: 0.8rem; }
+  .order-guide-btn span { display: none; }
+  .amz-menu-top { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .amz-menu-controls { flex-direction: column; align-items: flex-start; }
+  .amz-menu-cats { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 4px; }
+  .admin-section-header { flex-direction: column; gap: 10px; align-items: flex-start; }
+  .admin-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .inline-sub-form { flex-direction: column; }
+  .contact-email-direct p { font-size: 0.85rem; }
+  .amz-search { max-width: 100%; }
 }
 
 /* ===== Language Selector ===== */
