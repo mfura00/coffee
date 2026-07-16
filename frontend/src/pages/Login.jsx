@@ -26,10 +26,10 @@ const Login = () => {
   };
 
   return (
-    <div className="page auth-page">
-      <div className="auth-container">
-        <h1>{t('Sign In')}</h1>
-        <p>{t('Sign in to your account')}</p>
+    <div className="auth-page">
+      <div className="auth-card">
+        <h2>{t('Sign In')}</h2>
+        <p className="auth-subtitle">{t('Sign in to your account')}</p>
         {error && <div className="alert alert-error">{error}</div>}
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -40,11 +40,11 @@ const Login = () => {
             <label>{t('Password')}</label>
             <input type="password" value={form.password} onChange={e => setForm({ ...form, password: e.target.value })} required />
           </div>
-          <button type="submit" className="btn btn-primary btn-block" disabled={loading}>
+          <button type="submit" className="amz-btn amz-btn-checkout" disabled={loading} style={{ marginTop: 16, width: '100%' }}>
             {loading ? t('Loading') : t('Sign In')}
           </button>
         </form>
-        <p className="auth-switch">{t("Don't have an account?")} <Link to="/register">{t('Sign up')}</Link></p>
+        <p className="auth-link">{t("Don't have an account?")} <Link to="/register">{t('Sign up')}</Link></p>
       </div>
     </div>
   );

@@ -27,9 +27,10 @@ const Register = () => {
   };
 
   return (
-    <div className="page auth-page">
-      <div className="auth-container">
-        <h1>{t('Create Account')}</h1>
+    <div className="auth-page">
+      <div className="auth-card">
+        <h2>{t('Create Account')}</h2>
+        <p className="auth-subtitle">{t('Sign up to start ordering')}</p>
         {error && <div className="alert alert-error">{error}</div>}
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -44,11 +45,12 @@ const Register = () => {
             <label>{t('Password')}</label>
             <input type="password" value={form.password} onChange={e => setForm({ ...form, password: e.target.value })} required minLength={6} />
           </div>
-          <button type="submit" className="btn btn-primary btn-block" disabled={loading}>
+          <button type="submit" className="amz-btn amz-btn-checkout" disabled={loading} style={{ marginTop: 16, width: '100%' }}>
             {loading ? t('Loading') : t('Create Account')}
           </button>
         </form>
-        <p className="auth-switch">{t('Already have an account?')} <Link to="/login">{t('Sign In')}</Link></p>      </div>
+        <p className="auth-link">{t('Already have an account?')} <Link to="/login">{t('Sign In')}</Link></p>
+      </div>
     </div>
   );
 };
