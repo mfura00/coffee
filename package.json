@@ -4,6 +4,6 @@
   "private": true,
   "scripts": {
     "build": "cd frontend && npm ci && npm run build && cd ../backend && npm ci",
-    "start": "cd backend && exec node boot.js"
+    "start": "cd backend && node server.js"
   }
 }

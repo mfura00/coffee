@@ -22,14 +22,3 @@
 .wa-icon {
   font-size: 1.7rem;
 }
-@media only screen and (max-width: 480px) {
-  .wa-float {
-    bottom: 16px;
-    left: 16px;
-    width: 50px;
-    height: 50px;
-  }
-  .wa-icon {
-    font-size: 1.5rem;
-  }
-}
